@@ -1,0 +1,24 @@
+server:
+  port: 19980
+spring:
+  application:
+    name: config-server
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+  security:
+    user:
+      name: hi
+      password: ruben
+eureka:
+  client:
+    service-url:
+      defaultZone: http://hi:ruben@localhost:19990/eureka/,http://hi:ruben@localhost:19991/eureka/
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh,health,info,bus-refresh
